@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Lista de atividades - FTT</title>
+  </head>
+  <body>
+
+    <header>
+
+        <% if (task == null) {%>
+        <form action="/create" method="post">
+            <input type="text" name="task"id="task" placeholder="Insira uma atividade"/>
+            <button id="addButton" type="submit">Adicionar</button>
+        </form>
+        <% } else {%>
+        <form action="/update/<%= task._id %>" method="post">
+            <input type="text" name="task"id="task" value="<%= task.task %>"/>
+            <button id="addButton" type="submit">atualizar</button>
+        </form>
+        <% } %>
+    </header>
+
+    <section id="tasks">
+        <ul>
+            <% tasksList.forEach((task)=>{ %>
+            <li>
+                <%= task.task %> | <%= task.date.toLocaleDateString('pt-BR') %>
+                <a href="/getById/<%= task._id %>/update">Editar</a>
+                <a href="/getById/<%= task._id %>/delete">Apagar</a>
+            </li>
+            <% }) %>
+        </ul>
+    </section>
+
+    <% if(taskDelete != null) { %>
+    <section id="modal">
+        <div id="card">
+            <a href="/">x</a>
+            <h2>Confirmação</h2>
+            <hr>
+            <p>Deseja realmente apagar a atividade: <%= taskDelete.task %> ?</p>
+            <a href="/">Não</a>
+            <a href="/delete/<%= taskDelete._id %>">Sim</a>
+        </div>
+    </section>
+    <%} %>
+
+    <script src="script.js"></script>
+  </body>
+</html>
