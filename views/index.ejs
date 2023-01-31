@@ -50,12 +50,19 @@
     <% if(taskDelete != null) { %>
     <section id="modal">
         <div id="card">
-            <a href="/">x</a>
-            <h2>Confirmação</h2>
+
+            <div id="head">
+                <h2>Confirmação</h2>
+                <a id="close" href="/"><i class="bi bi-x"></i></a>
+            </div>
+            
             <hr>
             <p>Deseja realmente apagar a atividade: <%= taskDelete.task %> ?</p>
-            <a href="/">Não</a>
-            <a href="/delete/<%= taskDelete._id %>">Sim</a>
+            
+            <div id="btns">
+                <a id="btnNot" href="/">Não</a>
+                <a id="btnYes" href="/delete/<%= taskDelete._id %>">Sim</a>
+            </div>
         </div>
     </section>
     <%} %>
