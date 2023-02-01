@@ -1,11 +1,14 @@
-<h1><%= titleForm%></h1>
-<form action="/<%= action%>" method="post">
-  <input
-    type="text"
-    name="task"
-    id="task"
-    placeholder="Insira uma atividade"
-    value="<%= value%>"
-  />
-  <button id="<%= idBtn%>" type="submit"><%= nameBtn%></button>
-</form>
+  <h2><%= titleForm%></h2>
+  <form id="todo-form" action="/<%= action%>" method="post">
+    <div class="form-control">
+      <input
+        type="text"
+        name="task"
+        id="task"
+        placeholder="Insira uma atividade"
+        value="<%= value%>"
+      />
+      <button id="<%= idBtn%>" type="submit"><%= nameBtn%></button>
+    </div>
+  </form>
+

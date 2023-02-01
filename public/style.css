@@ -1,137 +1,133 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
-  margin: 0;
   padding: 0;
-  font-family: Roboto, helvetica;
-}
-
-body {
-  background-color: #202024;
-  width: 100%;
-  height: 100%;
-  color: #fff;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  box-sizing: border-box;
 }
 
 header {
-  background-color: #005290;
-  padding: 3rem;
-  margin: 0.5rem;
+  background-color: #fdfdfd;
+  padding: 1rem;
   text-align: center;
+  box-shadow: 3px 3px 1px 0px #00000060;
+  border-radius: 0 0 15px 15px;
 }
 
-header h1 {
-  padding-bottom: 3rem;
-}
-
-input {
-  margin: 0;
-  border: none;
-  border-radius: 0;
-  width: 75%;
-  padding: 0.6rem;
-  font-size: 1rem;
-  outline: none;
-  background-color: #202024;
-  color: #fff;
+body {
+  background-image: url("./images/bg.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 button {
-  padding: 0.6rem;
-  width: 22%;
-  background-color: #202024;
-  color: rgb(109, 109, 109);
-  text-align: center;
+  background-color: transparent;
+  color: #650e1f;
+  border: 2px solid #650e1f;
+  padding: 0.3rem 0.6rem;
   font-size: 1rem;
   cursor: pointer;
-  border-radius: 0;
-  border: none;
-  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
 }
 
 button:hover {
-  background-color: #004e14;
-  color: #fff;
+  background-color: #650e1f;
+  color: #ffffff;
 }
 
-section #tasks {
-  margin: 0.5rem;
+button:hover > i {
+  color: #ffffff;
 }
 
-ul {
-  list-style: none;
+button i {
+  color: #650e1f;
+  font-weight: bold;
+  pointer-events: none;
 }
 
-ul li {
-  position: relative;
-  padding: 0.5rem;
-  background-color: rgb(22, 22, 24);
-  text-decoration: none;
+input,
+select {
+  padding: 0.25rem 0.5rem;
+}
+
+.todo-container {
+  max-width: 450px;
+  margin: 3rem auto;
+  background-color: #fdfdfd;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 3px 3px 1px 0px #00000060;
+}
+
+.todo-container h2 {
+  text-align: center;
+  padding: 0 1rem 1rem;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+#todo-form {
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  font-size: 1.3rem;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
 }
 
-ul li a {
-  text-decoration: none;
-  color: #fff;
-  padding-left: 2rem;
+.form-control {
+  display: flex;
 }
 
-ul li span {
-  color: #ccc;
+.form-control input {
+  margin-right: 0.3rem;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  transition: .3s;
+}
+#todoText{
+  font-style: normal;
+  flex: 1;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.todo p{
+  flex: 1;
   font-style: italic;
-  font-size: 0.8rem;
-  padding-left: 1rem;
+  font-size: .9rem;
 }
 
-ul li div {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+.todo button{
+  margin-left: .4rem;
 }
-
-ul li:nth-child(odd) {
-  background-color: #272727;
-}
-
-ul li:hover {
-  background-color: #5a5a5a;
-}
-
-a.btnUpdate {
-  padding: 0.5rem;
-  text-decoration: none;
-  color: #ccc;
-  transition: all 0.3s ease-in-out;
-}
-
-a.btnUpdate:hover {
-  background: #3643f4;
-  color: #fff;
-}
-
-a.btnDelete {
-  padding: 0.5rem;
-  text-decoration: none;
-  color: #ccc;
-  transition: all 0.3s ease-in-out;
-}
-
-a.btnDelete:hover {
-  background: #f44336;
-  color: #fff;
+ 
+p.check-true{
+  text-decoration: line-through;
+  font-style: italic;
 }
 
 section#modal {
+  max-width: 450px;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #00000080;
+  background-color: #f7d4db;
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -142,7 +138,7 @@ section#modal {
 div#card {
   width: 30rem;
   position: relative;
-  background-color: #202024;
+  background-color: #f7d4db;
 }
 
 div#head {
@@ -152,7 +148,7 @@ div#head {
   padding: 1.5rem;
 }
 
-div#card h2 {
+div#head h1 {
   margin: 0;
 }
 
@@ -163,8 +159,13 @@ div#head a#close {
   transition: all 0.3s ease-in-out;
 }
 
-div#head a#close:hover {
-  background-color: #ff0000;
+div#head a#close i{
+  color: #333;
+}
+
+div#head a#close:hover, div#head a#close i:hover {
+  color:#fff;
+  background-color: #650e1f;
   border-radius: 5rem;
   padding: 0 0.2rem;
 }
@@ -193,30 +194,30 @@ div#btns a {
   padding: 0.5rem;
   width: 7rem;
   text-align: center;
-  background-color: #202024;
+  background-color: #650e1f5d;
   font-size: 1.5rem;
 }
 
 div#btns a#btnNot {
-  color: #ff0000;
-  border: solid 1px #ff0000;
+  color: #fff;
+  border: solid 1px #650e1f;
   margin-right: 1rem;
   transition: all 0.3s ease-in-out;
 }
 
 div#btns a#btnNot:hover {
-  background-color: #ff0000;
+  background-color: #650e1f;
   color: #fff;
 }
 
 div#btns a#btnYes {
-  color: #00aa2a;
-  border: solid 1px #00aa2a;
+  color: #fff;
+  border: solid 1px #650e1f;
   transition: all 0.3s ease-in-out;
 }
 
 div#btns a#btnYes:hover {
-  background-color: #00aa2a;
+  background-color: #035e17;
   color: #fff;
 }
 
@@ -236,12 +237,12 @@ div#btns a#btnYes:hover {
 
 .message-danger {
   background-color: rgb(255, 197, 197);
-  color: #8a0000;
+  color: #650e1f;
 }
 
 .message-success {
   background-color: rgb(197, 255, 214);
-  color: #008a1e;
+  color: #035e17;
 }
 
 span#close-message {
@@ -253,33 +254,4 @@ span#close-message {
 
 span#close-message:hover {
   color: rgb(255, 0, 0);
-}
-
-ul li.check-true{
-  background-color: #888888;
-  color: #fff;
-  text-decoration: line-through;
-}
-
-ul li a.check-true::before{
-  content: "";
-  position: absolute;
-  border: #fff solid;
-  top: 17px;
-  left: 16px;
-  height: 15px;
-  width: 7px;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
-
-ul li a.check-false::before{
-  content: "";
-  position: absolute;
-  border: #fff solid;
-  top: 20px;
-  left: 16px;
-  height: 13px;
-  width: 13px;
-  border-width: 2px 2px 2px 2px;
 }
