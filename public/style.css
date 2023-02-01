@@ -96,38 +96,37 @@ select {
   align-items: center;
   padding: 1rem;
   border-bottom: 1px solid #ddd;
-  transition: .3s;
+  transition: 0.3s;
 }
-#todoText{
+#todoText {
+  word-break: break-all;
   font-style: normal;
-  flex: 1;
   font-weight: bold;
   font-size: 1.2rem;
 }
 
-.todo p{
+.todo p {
   flex: 1;
   font-style: italic;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
-.todo button{
-  margin-left: .4rem;
+.todo button {
+  margin-left: 0.4rem;
 }
- 
-p.check-true{
+
+p.check-true {
   text-decoration: line-through;
   font-style: italic;
 }
 
 section#modal {
-  max-width: 450px;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #f7d4db;
+  background-color: rgba(204, 204, 204, 0.452);
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -138,7 +137,9 @@ section#modal {
 div#card {
   width: 30rem;
   position: relative;
-  background-color: #f7d4db;
+  background-color: #fdfdfd;
+  border-radius: 15px;
+  box-shadow: 3px 3px 1px 0px #00000060;
 }
 
 div#head {
@@ -159,12 +160,13 @@ div#head a#close {
   transition: all 0.3s ease-in-out;
 }
 
-div#head a#close i{
+div#head a#close i {
   color: #333;
 }
 
-div#head a#close:hover, div#head a#close i:hover {
-  color:#fff;
+div#head a#close:hover,
+div#head a#close i:hover {
+  color: #fff;
   background-color: #650e1f;
   border-radius: 5rem;
   padding: 0 0.2rem;
@@ -194,12 +196,13 @@ div#btns a {
   padding: 0.5rem;
   width: 7rem;
   text-align: center;
-  background-color: #650e1f5d;
+  background-color: transparent;
   font-size: 1.5rem;
+  border-radius: 15px;
 }
 
 div#btns a#btnNot {
-  color: #fff;
+  color: #650e1f;
   border: solid 1px #650e1f;
   margin-right: 1rem;
   transition: all 0.3s ease-in-out;
@@ -211,7 +214,7 @@ div#btns a#btnNot:hover {
 }
 
 div#btns a#btnYes {
-  color: #fff;
+  color: #650e1f;
   border: solid 1px #650e1f;
   transition: all 0.3s ease-in-out;
 }
