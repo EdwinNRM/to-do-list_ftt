@@ -8,7 +8,7 @@ Capacidade de criar, editar e excluir itens da lista de tarefas
 Marcar itens como concluídos
 Design responsivo que funciona em desktops e dispositivos móveis
 
-##Instalação
+## Instalação
 Para executar o aplicativo localmente, siga estes passos:
 
 Clone este repositório: git clone https://github.com/EdwinNRM/to-do-list_ftt.git
@@ -22,11 +22,11 @@ PORT=3000
 Inicie o servidor: npm start
 Abra um navegador e acesse http://localhost:3000
 
-##Stack utilizada
+## Stack utilizada
 Node.js
 Express
 MongoDB
 EJS
 
-##Contribuições
+## Contribuições
 Contribuições para este projeto são bem-vindas. Por favor, crie um pull request e nós iremos revisar suas alterações.
