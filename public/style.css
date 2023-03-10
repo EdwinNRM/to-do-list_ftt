@@ -102,7 +102,7 @@ select {
 #todoText {
   word-break: break-all;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
 }
 
 .todo p {
